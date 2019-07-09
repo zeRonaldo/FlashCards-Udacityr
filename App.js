@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, StatusBar} from 'react-native';
+import { StyleSheet, View, StatusBar} from 'react-native';
 import { createStore } from 'redux';
 import {Provider} from 'react-redux';
 import Reducers from './reducers';
@@ -9,6 +9,7 @@ import Navigators from './Navigators'
 import Main from './src/views/Main';
 import { colors } from './src/utils/variables';
 import initialState from './actions/initial'
+import devToolsEnhancer from 'remote-redux-devtools';
 
 if (__DEV__) {
   require('react-devtools');
@@ -17,7 +18,7 @@ if (__DEV__) {
 
 const store = createStore(Reducers, initialState, Middlewares);
 
-export default function App() {
+export default function App () {
   return (
     <Provider store={store}>
       <View style={styles.container}>
@@ -33,7 +34,5 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: Constants.statusBarHeight,
-    backgroundColor: colors.bg
   },
 });

@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import { Icon } from 'native-base';
 import { colors } from '../utils/variables';
 import {setSearch} from '../../actions/index'
-
+import { Constants} from 'expo'
 class SearchBar extends Component {
     state = {
        using: false,
@@ -68,6 +68,7 @@ export default connect(mapStateToProps)(SearchBar)
 const styles = StyleSheet.create({
     textInput: {
         width: '90%',
+        marginTop: Constants.statusBarHeight+2,
         paddingHorizontal: '1%',
         height: 40,
         marginVertical: 10,

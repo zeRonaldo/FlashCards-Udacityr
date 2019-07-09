@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
-import {Icon} from "native-base";
 import { connect } from 'react-redux';
 import { colors } from '../utils/variables';
 import gradient from '../../assets/gradient.png'
-import { toggleFavorite } from '../../actions';
+import { setDeck} from '../../actions';
 import { Actions } from 'react-native-router-flux';
 import FavoriteStar from "../components/FavoriteStar";
 
@@ -15,12 +14,16 @@ import FavoriteStar from "../components/FavoriteStar";
     };
   }
 
+  goToDeck = (deck) => {
+    this.props.dispatch(setDeck(deck))
+    Actions.push("deck")
+  }
   render() {
-      const {id, title, favorite, cards} = this.props.deck
+      const {id, title, cards} = this.props.deck
   
     return (
       <View style={styles.container} key={id}>
-        <TouchableOpacity onPress={()=> Actions.push("deck", {id})}>
+        <TouchableOpacity onPress={()=> this.goToDeck(this.props.deck)}>
           <View style={styles.viewCard}>
               <ImageBackground source={gradient} style={{width: '100%', height: '100%'}}>
                   <View style={styles.info}>

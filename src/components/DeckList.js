@@ -3,6 +3,7 @@ import { View, ScrollView,  StyleSheet, } from 'react-native';
 import {Tabs, Tab, ScrollableTab} from 'native-base'
 import {connect} from 'react-redux';
 import DeckItem from './DeckItem';
+import { setDeck } from '../../actions';
  class DeckList extends Component {
   constructor(props) {
     super(props);
@@ -10,13 +11,10 @@ import DeckItem from './DeckItem';
       currentTab: 0,
     };
   }
-  componentDidMount() {
-    console.log("Decklist: ", this.props.decks)
-  }
+  
   render() {
       const {decks, search} =  this.props
       const {currentTab}= this.state
-      console.log(decks)
     return (
       <View style={styles.scroll}>
 

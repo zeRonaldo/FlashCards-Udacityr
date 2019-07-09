@@ -18,7 +18,7 @@ class Main extends Component {
       <View style={styles.fullScreen}>
         <SearchBar/>
         <DeckList/>
-        <SolidButton pressed={()=> Actions.createdeck()} buttonText="New Deck"/>
+        <SolidButton pressed={()=> Actions.createdeck({newDeck: true})} buttonText="New Deck"/>
       </View>
     );
   }

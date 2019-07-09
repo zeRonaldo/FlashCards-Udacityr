@@ -1,4 +1,4 @@
-import { NEW_DECK, EDIT_DECK, FAVORITE_DECK, GET_DECK } from "../actions/types";
+import { NEW_DECK, EDIT_DECK, FAVORITE_DECK, GET_DECK, SET_DECK } from "../actions/types";
 import {hashID} from '../src/utils/helpers'
 
 export default DeckReducer = (state = {}, action) => {
@@ -17,17 +17,7 @@ export default DeckReducer = (state = {}, action) => {
                 
         
         //Chage the current deck object title and description
-        case EDIT_DECK:
-            if(state.id !== action.id){
-                return state
-            }
-            return {
-                ...state,
-                ...action.title,
-                ...action.description,
-                ...action.cards,
-            }
-        
+       
         //Toggle the favorite property of the deck with the responding id
         case FAVORITE_DECK:
             if(state.id !== action.id){
@@ -41,11 +31,13 @@ export default DeckReducer = (state = {}, action) => {
             
         
         //Returns a single deck object with the id passed
-        case GET_DECK:
-            if(state.id === action.id){
-                return state;
-            }
+        // case GET_DECK:
+        //     if(state.id === action.id){
+        //         return state;
+        //     }
         
+        
+
         default:
             return state;
     }

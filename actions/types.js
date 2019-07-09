@@ -5,6 +5,8 @@ export const EDIT_DECK              = 'EDIT_DECK'
 export const DELETE_DECK            = 'DELETE_DECK'
 export const FAVORITE_DECK          = 'FAVORITE_DECK'
 export const SET_DECKS              = 'SET_DECKS'
+export const SET_DECK               = 'SET_DECK'
+export const SET_DECK_BY_ID         = 'SET_DECK_BY_ID'
 
 export const ADD_CARD               = 'ADD_CARD'
 export const DELETE_CARD            = 'DELETE_CARD'
