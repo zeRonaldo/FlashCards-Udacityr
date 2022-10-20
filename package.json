@@ -11,7 +11,7 @@
     "reset": "rm -rf node_modules && npx npm-force-resolutions && npm install"
   },
   "dependencies": {
-    "expo": "^33.0.7",
+    "expo": "^46.0.16",
     "formik": "^1.5.7",
     "native-base": "^2.12.1",
     "react": "16.8.6",
